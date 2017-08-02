@@ -2,42 +2,23 @@
 require './calculadora-main.rb'
 
 repeticoes = 3
-operacoes = ["somar","subtrair","multiplicar","dividir"]
+
 aleatorio = Random.new
 calculadora = Calculadora.new
 
+operacoes = [
+	{op: 'somar', simb: '+'},
+	{op: 'subtrair', simb: '-'},
+	{op: 'multiplicar', simb: 'X'},
+	{op: 'dividir', simb: '/'}
+]
+
+
 operacoes.each do |op| 
-	case op
-	when "somar"
-		puts "Exemplos de Soma"	
-		repeticoes.times do
-			num1 = aleatorio.rand(10)
-			num2 = aleatorio.rand(10)
-			puts "#{num1} + #{num2} = #{calculadora.somar(num1,num2)}"
-		end
-
-	when "subtrair"
-		puts "Exemplos de subtração"
-		repeticoes.times do
-			num1 = aleatorio.rand(10)
-			num2 = aleatorio.rand(10)
-			puts "#{num1} - #{num2} = #{calculadora.subtrair(num1,num2)}"			
-		end
-
-	when "multiplicar"
-		puts "Exemplos de multiplicação"
-		repeticoes.times do
-			num1 = aleatorio.rand(10)
-			num2 = aleatorio.rand(10)
-			puts "#{num1} X #{num2} = #{calculadora.multiplicar(num1,num2)}"			
-		end		
-
-	when "dividir"
-		puts "Exemplos de divisão"
-		repeticoes.times do
-			num1 = aleatorio.rand(10).to_f
-			num2 = aleatorio.rand(10).to_f
-			puts "#{num1} / #{num2} = #{calculadora.dividir(num1,num2)}"			
-		end		
+	puts "#{op[:op].capitalize}"
+	repeticoes.times do
+		num1 = aleatorio.rand(10)
+		num2 = aleatorio.rand(10)
+		puts "#{num1} #{op[:simb]} #{num2} = #{calculadora.operar(op[:op],num1,num2)}"
 	end
 end

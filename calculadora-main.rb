@@ -1,17 +1,35 @@
+require './math-logger.rb'
 class Calculadora
-	def somar(valor1,valor2)
-		resultado = valor1 + valor2
+	protected def somar(valor1,valor2)
+		resultado = valor1 + valor2		
 	end
-
-	def subtrair(valor1,valor2)
-		resultado = valor1 - valor2
+	protected def subtrair(valor1,valor2)
+		resultado = valor1 - valor2		
 	end
-
-	def multiplicar(valor1,valor2)
-		resultado = valor1 * valor2
+	protected def multiplicar(valor1,valor2)
+		resultado = valor1 * valor2		
 	end
-
-	def dividir(valor1,valor2)
-		resultado = valor1 / valor2
+	protected def dividir(valor1,valor2)
+			resultado = valor1 / valor2		
+	end
+	protected def invalida(valor1,valor2)
+		resultado = 'Somente somar, subtrair, multiplicar e dividir sao aceitas'
+	end
+	def operar(op,valor1,valor2)
+		reg = Registro.new
+		case op
+		when 'somar'
+			res = self.somar(valor1,valor2)
+		when 'subtrair'
+			res = self.subtrair(valor1,valor2)
+		when 'multiplicar'
+			res = self.multiplicar(valor1,valor2)
+		when 'dividir'
+			res = self.dividir(valor1,valor2)
+		else
+			op = 'invalida'
+			res = self.invalida(valor1,valor2)
+		end
+		reg.logar(op,valor1,valor2)
 	end
 end
