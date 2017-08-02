@@ -1,11 +1,8 @@
 #!/usr/bin/ruby
 require './calculadora-main.rb'
-
 repeticoes = 3
-
 aleatorio = Random.new
 calculadora = Calculadora.new
-
 operacoes = [
 	{op: 'somar', simb: '+'},
 	{op: 'subtrair', simb: '-'},
