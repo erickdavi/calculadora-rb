@@ -1,21 +1,22 @@
 #!/usr/bin/ruby
 require './calculadora-main.rb'
 
+calc = Calculadora.new
 operacao = ARGV[0]
 valor1 = ARGV[1].to_i
 valor2 = ARGV[2].to_i
 
 if operacao == "somar"
-	resultado =somar(valor1,valor2)
+	resultado = calc.somar(valor1,valor2)
 
 elsif operacao == "subtrair"
-	resultado = subtrair(valor1,valor2)
+	resultado = calc.subtrair(valor1,valor2)
 
 elsif operacao == "multiplicar"
-	resultado =  multiplicar(valor1,valor2)
+	resultado =  calc.multiplicar(valor1,valor2)
 
 elsif operacao == "dividir"
-	resultado = dividir(valor1,valor2)
+	resultado = calc.dividir(valor1,valor2)
 
 else
 	resultado = "Operacao inválida"
