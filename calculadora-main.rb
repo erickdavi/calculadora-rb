@@ -40,6 +40,3 @@ class Calculadora
 		return res
 	end
 end
-#teste = Calculadora.new
-#valor = teste.operar("somar",3,3)
-#puts valor
