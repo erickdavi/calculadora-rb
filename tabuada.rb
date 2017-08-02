@@ -12,8 +12,6 @@ operacoes = [
 	{op: 'multiplicar', simb: 'X'},
 	{op: 'dividir', simb: '/'}
 ]
-
-
 operacoes.each do |op| 
 	puts "#{op[:op].capitalize}"
 	repeticoes.times do
