@@ -28,14 +28,12 @@ class Calculadora
 			if valor2 != 0
 				res = self.dividir(valor1.to_f,valor2.to_f)
 			else
-				#op 'invalida'
 				res = 'Nao e possivel dividir por zero'
 			end
 		else
 			op = 'invalida'
 			res = self.invalida(valor1,valor2)
 		end
-		#puts "Operacao:  #{op}"
 		reg.logar(op,valor1,valor2)
 		return res
 	end
