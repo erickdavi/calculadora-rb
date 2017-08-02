@@ -11,10 +11,8 @@ class Registro
 		self.criar(logfile)
 		log = Logger.new(logfile)
 
-		if op == 'invalida' 
+		if (op == 'invalida' or (op == 'dividir' and num2 ==0)) 
 			log.error("#{op} #{num1} e #{num2} !!Operacao invalida")
-		elsif op == 'divz'
-			log.error("#{op} #{num1} e #{num2} !!Divisão por zero")
 		else
 			log.info("#{op} #{num1} e #{num2}")
 		end
